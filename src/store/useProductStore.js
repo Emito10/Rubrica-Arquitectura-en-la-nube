@@ -23,7 +23,7 @@ const useProductStore = create((set, get) => ({
     set({ loading: true });
     try {
       if (editando) {
-        await axios.put(`${API_URL}/${idProducto}`, formulario);
+        await axios.patch(`${API_URL}/${idProducto}`, formulario);
       } else {
         await axios.post(API_URL, formulario);
       }
