@@ -76,7 +76,7 @@ function App() {
           </div>
         </div>
 
-        <Button onClick={openCreate}>
+        <Button onClick={openCreate} className="cursor-pointer">
           <PlusIcon />
           Nuevo producto
         </Button>
