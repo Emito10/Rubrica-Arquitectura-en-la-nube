@@ -44,7 +44,12 @@ function EmptyState() {
   );
 }
 
-export function ProductTable({ productos, loading, onEdit, onDelete }: ProductTableProps) {
+export function ProductTable({
+  productos,
+  loading,
+  onEdit,
+  onDelete,
+}: ProductTableProps) {
   if (loading) return <LoadingSkeleton />;
   if (productos.length === 0) return <EmptyState />;
 
@@ -80,6 +85,7 @@ export function ProductTable({ productos, loading, onEdit, onDelete }: ProductTa
             <TableCell className="text-right">
               <div className="flex justify-end gap-1">
                 <Button
+                  className="cursor-pointer"
                   variant="ghost"
                   size="icon-sm"
                   onClick={() => onEdit(producto)}
@@ -88,6 +94,7 @@ export function ProductTable({ productos, loading, onEdit, onDelete }: ProductTa
                   <span className="sr-only">Editar {producto.name}</span>
                 </Button>
                 <Button
+                  className="cursor-pointer"
                   variant="ghost"
                   size="icon-sm"
                   onClick={() => onDelete(producto)}
